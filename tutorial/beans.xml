@@ -6,6 +6,14 @@
     <bean id="person" class="tutorial.Person">
         <constructor-arg name="id" value="123"></constructor-arg>
         <constructor-arg name="name" value="Tosha"></constructor-arg>
+        <property name="taxId" value="555"></property>
+        
+        <!-- 
+        Remember setMethod and map name accordingly
+         <property name="taxId">
+         <value>123</value>
+         </property>
+         -->
     </bean>
 </beans>
 
