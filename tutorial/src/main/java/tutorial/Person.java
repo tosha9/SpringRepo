@@ -46,7 +46,14 @@ public class Person
         System.out.println("I am a person");
     }
 
-
+    public void onCreate ()
+    {
+        System.out.println("Person Created "+this);
+    }
+    public void onDestroy ()
+    {
+        System.out.println("Person destroyed");
+    }
 
     @Override
     public String toString ()

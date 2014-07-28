@@ -3,7 +3,8 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 	<beans>
-		<bean id="person" class="tutorial.Person" scope="prototype">
+		<bean id="person" class="tutorial.Person" scope="singleton"
+			init-method="onCreate" destroy-method="onDestroy">
 			<constructor-arg name="id" value="123"></constructor-arg>
 			<constructor-arg name="name" value="Tosha"></constructor-arg>
 			<property name="taxId" value="555"></property>
