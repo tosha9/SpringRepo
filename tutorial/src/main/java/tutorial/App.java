@@ -12,13 +12,10 @@ public class App
         ApplicationContext context = new FileSystemXmlApplicationContext("beans.xml");
         
         
-        Person person = (Person)context.getBean("person");
-        
-        person.setTaxId(777);
+        Person person = (Person)context.getBean("person2");
         
         System.out.println("person = "+person);
-      
-        
+     
         ((FileSystemXmlApplicationContext)context).close();
         
     }

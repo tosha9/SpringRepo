@@ -16,12 +16,29 @@
 				<value>123</value> </property> -->
 			<property name="address" ref="address"></property>
 		</bean>
+		
+		<bean id="person2" class="tutorial.Person" scope="singleton"
+			init-method="onCreate" destroy-method="onDestroy"
+			factory-method="createPerson" factory-bean="personFactory">
+			<!-- factory-method will take in paramenters as constructor-arg as getInstance() 
+				does not take any parameters follow code needs to be commented -->
+			<constructor-arg name="id" value="777"></constructor-arg>
+			<constructor-arg name="name" value="FactoryBean"></constructor-arg>
+			<property name="taxId" value="654"></property>
+
+			<!-- Remember setMethod and map name accordingly <property name="taxId"> 
+				<value>123</value> </property> -->
+			<property name="address" ref="address"></property>
+		</bean>
 
 		<bean id="address" class="tutorial.Address">
 			<constructor-arg name="street" value="Lennox Street"></constructor-arg>
 			<constructor-arg name="postCode" value="66061"></constructor-arg>
 		</bean>
+		
+		<bean id="personFactory" class="tutorial.PersonFacory"></bean>
 
 	</beans>
 
+	
 </beans>
