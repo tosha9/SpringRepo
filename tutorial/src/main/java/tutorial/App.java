@@ -11,7 +11,7 @@ public class App
        
         ApplicationContext context = new FileSystemXmlApplicationContext("beans.xml");
         
-        System.out.println("Singleton bean");
+        System.out.println("Prototype bean");
         
         Person person1 = (Person)context.getBean("person");
         Person person2 = (Person)context.getBean("person");
@@ -25,8 +25,12 @@ public class App
         {
             System.out.println("Address of the person bean for both instances is same");
         }
+        else
+        {
+            System.out.println("Different address for different instances");
+        }
         
-        System.out.println("Conclusion: No matter how may times we call person Spring will rteturn same bean");
+        System.out.println("Conclusion: Prototype bean will give out new instances of object");
         ((FileSystemXmlApplicationContext)context).close();
         
     }
