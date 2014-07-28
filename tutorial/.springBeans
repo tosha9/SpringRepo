@@ -9,6 +9,7 @@
 	<configs>
 		<config>beans.xml</config>
 		<config>bean2.xml</config>
+		<config>autowiring.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
