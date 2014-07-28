@@ -32,10 +32,8 @@ public class Jungle
     {
         StringBuilder sb = new StringBuilder();
 
-        sb.append("Largest Animal is ");
-        sb.append(getLargestAnimal().getName());
-        sb.append(" and type is ");
-        sb.append(getLargestAnimal().getType());
+        sb.append("Largest Animal is :\n");
+        sb.append(getLargestAnimal());
         sb.append(" Contains :\n");
 
         for (Animal animal : annimals)
