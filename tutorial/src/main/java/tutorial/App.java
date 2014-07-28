@@ -12,10 +12,12 @@ public class App
         ApplicationContext context = new FileSystemXmlApplicationContext("beans.xml");
         
         Person person = (Person)context.getBean("person");
+        Address address = (Address)context.getBean("address");
         
         person.speak();
         
-        System.out.println(person.toString());
+        System.out.println(person);
+        System.out.println(address);
         
         ((FileSystemXmlApplicationContext)context).close();
         
