@@ -4,16 +4,20 @@ public class Person
 {
     private int id;
     private String name;
-    
+
     private Address address;
-    
 
     public int taxId;
-    
+
     public Person(int id, String name)
     {
         this.id = id;
         this.name = name;
+    }
+
+    public Person()
+    {
+        System.out.println("I am a constructor");
     }
 
     public int getId ()
@@ -36,11 +40,6 @@ public class Person
         this.name = name;
     }
 
-   /* public Person()
-    {
-        System.out.println("I am a constructor");
-    }*/
-
     public void speak ()
     {
         System.out.println("I am a person");
@@ -48,8 +47,9 @@ public class Person
 
     public void onCreate ()
     {
-        System.out.println("Person Created "+this);
+        System.out.println("Person Created " + this);
     }
+
     public void onDestroy ()
     {
         System.out.println("Person destroyed");
@@ -70,7 +70,11 @@ public class Person
     {
         this.address = address;
     }
-    
-    
-    
+
+    public static Person getInstance ( int id, String name)
+    {
+        System.out.println("Creating Person using factory method");
+        return new Person(id, name);
+    }
+
 }

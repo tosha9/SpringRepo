@@ -5,7 +5,9 @@
 	default-init-method="init" default-destroy-method="destroy">
 	<beans>
 		<bean id="person" class="tutorial.Person" scope="singleton"
-			init-method="onCreate" destroy-method="onDestroy">
+			init-method="onCreate" destroy-method="onDestroy" factory-method="getInstance">
+			<!-- factory-method will take in paramenters as constructor-arg as getInstance() 
+				does not take any parameters follow code needs to be commented -->
 			<constructor-arg name="id" value="123"></constructor-arg>
 			<constructor-arg name="name" value="Tosha"></constructor-arg>
 			<property name="taxId" value="555"></property>
@@ -16,7 +18,7 @@
 		</bean>
 
 		<bean id="address" class="tutorial.Address">
-		    <constructor-arg name="street" value="Lennox Street"></constructor-arg>
+			<constructor-arg name="street" value="Lennox Street"></constructor-arg>
 			<constructor-arg name="postCode" value="66061"></constructor-arg>
 		</bean>
 

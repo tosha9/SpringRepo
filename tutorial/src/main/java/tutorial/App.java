@@ -11,15 +11,12 @@ public class App
        
         ApplicationContext context = new FileSystemXmlApplicationContext("beans.xml");
         
-        System.out.println("Adding Init and destroy method");
         
-        System.out.println("Spring only destroys singleton bean and not prototype bean when context is closed");
+        Person person = (Person)context.getBean("person");
         
-        Person person1 = (Person)context.getBean("person");
+        person.setTaxId(777);
         
-        person1.setTaxId(777);
-        
-        System.out.println("person1 = "+person1);
+        System.out.println("person = "+person);
       
         
         ((FileSystemXmlApplicationContext)context).close();
