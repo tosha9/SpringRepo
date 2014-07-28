@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<beans>
+		<bean id="jungle" class="tutorial.Jungle">
+
+			<property name="largestAnimal" ref="animal1"></property>
+			<property name="annimals">
+				<list>
+					<ref bean="animal1" />
+					<ref bean="animal2" />
+					<ref bean="animal3" />
+				</list>
+			</property>
+		</bean>
+
+		<bean class="tutorial.Animal" id="animal1">
+			<constructor-arg value="Mr Elephant"></constructor-arg>
+			<constructor-arg value="Elephant"></constructor-arg>
+		</bean>
+
+		<bean class="tutorial.Animal" id="animal2">
+			<constructor-arg value="Mr Fox"></constructor-arg>
+			<constructor-arg value="Fox"></constructor-arg>
+		</bean>
+
+		<bean class="tutorial.Animal" id="animal3">
+			<constructor-arg value="Mr Snake"></constructor-arg>
+			<constructor-arg value="Snake"></constructor-arg>
+		</bean>
+
+	</beans>
+
+</beans>

@@ -9,12 +9,11 @@ public class App
     public static void main (String[] args)
     {
        
-        ApplicationContext context = new FileSystemXmlApplicationContext("beans.xml");
+        ApplicationContext context = new FileSystemXmlApplicationContext("bean2.xml");
+           
+        Jungle jungle = (Jungle)context.getBean("jungle");
         
-        
-        FruitBasket basket = (FruitBasket)context.getBean("basket");
-        
-        System.out.println(basket);
+        System.out.println(jungle);
  
         ((FileSystemXmlApplicationContext)context).close();
          
