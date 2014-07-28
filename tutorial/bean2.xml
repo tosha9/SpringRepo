@@ -15,12 +15,13 @@
 
 
 			<property name="annimals">
-				<list>
-					<ref bean="animal1" />
-					<ref bean="animal2" />
-					<ref bean="animal3" />
-				</list>
-				
+				<!-- <list> <ref bean="animal1" /> <ref bean="animal2" /> <ref bean="animal3" 
+					/> </list> -->
+					<map>
+						<entry key-ref="animal2" value="burrow"></entry>
+						<entry key-ref="animal3" value="desert"></entry>
+					</map>
+
 			</property>
 			<property name="foods">
 				<props>

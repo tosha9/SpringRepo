@@ -1,12 +1,11 @@
 package tutorial;
 
-import java.util.List;
 import java.util.Map;
 
 public class Jungle
 {
     private Animal largestAnimal;
-    private List<Animal> annimals;
+    private Map<Animal, String> annimals;
 
     private Map<String, String> foods;
     
@@ -21,12 +20,12 @@ public class Jungle
         this.largestAnimal = largestAnimal;
     }
 
-    public List<Animal> getAnnimals ()
+    public Map<Animal, String> getAnnimals ()
     {
         return annimals;
     }
 
-    public void setAnnimals (List<Animal> annimals)
+    public void setAnnimals (Map<Animal, String> annimals)
     {
         this.annimals = annimals;
     }
@@ -51,9 +50,9 @@ public class Jungle
         sb.append(getLargestAnimal());
         sb.append(" Contains :\n");
 
-        for (Animal animal : annimals)
+        for (Map.Entry<Animal, String> entry: annimals.entrySet())
         {
-            sb.append(animal);
+            sb.append(entry.getKey()+" and "+entry.getValue()+"\n");
             sb.append("\n");
         }
         
