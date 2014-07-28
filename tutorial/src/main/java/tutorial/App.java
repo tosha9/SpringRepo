@@ -15,6 +15,8 @@ public class App
         
         person.speak();
         
+        System.out.println(person.toString());
+        
         ((FileSystemXmlApplicationContext)context).close();
         
     }
