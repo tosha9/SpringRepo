@@ -20,6 +20,14 @@
 					<ref bean="animal2" />
 					<ref bean="animal3" />
 				</list>
+				
+			</property>
+			<property name="foods">
+				<props>
+					<prop key="gorilla">banana</prop>
+					<prop key="panda">bamboo</prop>
+					<prop key="snake">eggs</prop>
+				</props>
 			</property>
 		</bean>
 
