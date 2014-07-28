@@ -35,5 +35,15 @@ public class Address
         return "Address [street=" + street + ", postCode=" + postCode + "]";
     }
     
+    public void init ()
+    {
+        System.out.println("My default Init method");
+    }
+    
+    public void destroy ()
+    {
+        System.out.println("My default destroy method");
+    }
+    
     
 }
