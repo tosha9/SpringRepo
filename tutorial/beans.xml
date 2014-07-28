@@ -18,6 +18,8 @@
 			<property name="address" ref="address"></property>
 		</bean>
 
+		<bean id="personFactory" class="tutorial.PersonFacory"></bean>
+
 		<bean id="person2" class="tutorial.Person" scope="singleton"
 			init-method="onCreate" destroy-method="onDestroy" factory-method="createPerson"
 			factory-bean="personFactory">
@@ -35,12 +37,21 @@
 			<constructor-arg name="postCode" value="66061"></constructor-arg>
 		</bean>
 
-		<bean id="address2" class="tutorial.Address" p:street="23 Olathe Street" p:postCode="85281">
-			
+		<bean id="address2" class="tutorial.Address" p:street="23 Olathe Street"
+			p:postCode="85281">
 		</bean>
 
-		<bean id="personFactory" class="tutorial.PersonFacory"></bean>
+		<bean id="basket" class="tutorial.FruitBasket">
+			<constructor-arg value="Tosha's Basket"></constructor-arg>
+			<constructor-arg>
+				<list> <!-- can use set to weed out duplicate -->
+					<value>Orange</value>
+					<value>Apple</value>
+					<value>Mango</value>
+					<value>Banana</value>
+					<value>Orange</value>
+				</list>
+			</constructor-arg>
+		</bean>
 	</beans>
-
-
 </beans>

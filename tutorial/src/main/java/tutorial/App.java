@@ -12,18 +12,12 @@ public class App
         ApplicationContext context = new FileSystemXmlApplicationContext("beans.xml");
         
         
-        Person person = (Person)context.getBean("person2");
+        FruitBasket basket = (FruitBasket)context.getBean("basket");
         
-        System.out.println("person = "+person);
-        
-        Address address = (Address)context.getBean("address2");
-        
-        System.out.println(address);
-     
+        System.out.println(basket);
+ 
         ((FileSystemXmlApplicationContext)context).close();
-        
-        
-        
+         
     }
 
 }
