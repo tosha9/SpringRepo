@@ -5,7 +5,10 @@ public class Address
     private String street;
     private String postCode;
     
-    
+    public Address()
+    {
+        
+    }
     
     public Address(String street, String postCode)
     {

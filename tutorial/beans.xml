@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
-	default-init-method="init" default-destroy-method="destroy">
+	default-init-method="init" default-destroy-method="destroy"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 	<beans>
 		<bean id="person" class="tutorial.Person" scope="singleton"
 			init-method="onCreate" destroy-method="onDestroy" factory-method="getInstance">
@@ -16,12 +17,10 @@
 				<value>123</value> </property> -->
 			<property name="address" ref="address"></property>
 		</bean>
-		
+
 		<bean id="person2" class="tutorial.Person" scope="singleton"
-			init-method="onCreate" destroy-method="onDestroy"
-			factory-method="createPerson" factory-bean="personFactory">
-			<!-- factory-method will take in paramenters as constructor-arg as getInstance() 
-				does not take any parameters follow code needs to be commented -->
+			init-method="onCreate" destroy-method="onDestroy" factory-method="createPerson"
+			factory-bean="personFactory">
 			<constructor-arg name="id" value="777"></constructor-arg>
 			<constructor-arg name="name" value="FactoryBean"></constructor-arg>
 			<property name="taxId" value="654"></property>
@@ -35,10 +34,13 @@
 			<constructor-arg name="street" value="Lennox Street"></constructor-arg>
 			<constructor-arg name="postCode" value="66061"></constructor-arg>
 		</bean>
-		
-		<bean id="personFactory" class="tutorial.PersonFacory"></bean>
 
+		<bean id="address2" class="tutorial.Address" p:street="23 Olathe Street" p:postCode="85281">
+			
+		</bean>
+
+		<bean id="personFactory" class="tutorial.PersonFacory"></bean>
 	</beans>
 
-	
+
 </beans>
