@@ -4,7 +4,11 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-	<bean id="logger" class="autowiring.logger" autowire="byName"></bean>
+<!-- autowire by constructor look by type 
+
+	You can not have a mixture for autowire by type and name together in xml-->
+
+	<bean id="logger" class="autowiring.logger" autowire="constructor"></bean>
 	
 	<bean id="consoleWritter" class="autowiring.ConsoleWritter"></bean>
 	<bean id="consoleWritterOther" class="autowiring.ConsoleWritter"></bean>

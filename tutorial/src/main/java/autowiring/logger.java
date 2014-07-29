@@ -6,6 +6,11 @@ public class logger
     private ConsoleWritter consoleWritterOther;
     private FileWritter fileWritter;
     
+    public logger(ConsoleWritter consoleWritter, FileWritter fileWritter)
+    {
+        this.consoleWritter = consoleWritter;
+        this.fileWritter = fileWritter;
+    }
     
     public ConsoleWritter getConsoleWritter ()
     {
