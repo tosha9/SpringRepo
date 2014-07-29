@@ -12,6 +12,11 @@ public class logger
         this.fileWritter = fileWritter;
     }
     
+    public logger()
+    {
+        // TODO Auto-generated constructor stub
+    }
+    
     public ConsoleWritter getConsoleWritter ()
     {
         return consoleWritter;
