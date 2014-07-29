@@ -3,6 +3,7 @@ package autowiring;
 public class logger
 {   
     private ConsoleWritter consoleWritter;
+    private ConsoleWritter consoleWritterOther;
     private FileWritter fileWritter;
     
     
@@ -28,11 +29,25 @@ public class logger
         consoleWritter.write(text);
     }
     
+    public void consoleOtherWrite (String text)
+    {
+        consoleWritterOther.write(text);
+    }
+    
 
     public void fileWrite (String text)
     {
         fileWritter.write(text);
     }
+    public ConsoleWritter getConsoleWritterOther ()
+    {
+        return consoleWritterOther;
+    }
+    public void setConsoleWritterOther (ConsoleWritter consoleWritterOther)
+    {
+        this.consoleWritterOther = consoleWritterOther;
+    }
+    
     
     
 }

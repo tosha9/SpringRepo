@@ -15,7 +15,8 @@ public class App
            
         logger l = (logger)context.getBean("logger");
         
-        l.fileWrite("File is blah blah");
+        l.consoleWrite("Console write ");
+        l.consoleOtherWrite("Conlose2 Write");
         l.fileWrite("Console is blah blah");
  
         ((FileSystemXmlApplicationContext)context).close();
